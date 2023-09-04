@@ -7,7 +7,7 @@ use MVC\Router;
 class CitaController {
     public static function index(Router $router) {
         
-        session_start();
+        
         // Valida que esté iniciada la sesión
         isAuth();
 

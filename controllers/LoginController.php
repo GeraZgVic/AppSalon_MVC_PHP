@@ -12,9 +12,12 @@ class LoginController
     public static function login(Router $router)
     {
         $alertas = [];
+        $auth = new Usuario();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $auth = new Usuario($_POST);
+            $auth->email = $_POST['email'];
+            $auth->password = $_POST['password'];
+
             $alertas = $auth->validarLogin();
             if (empty($alertas)) {
                 // Comprobar que exista el usuario

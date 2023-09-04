@@ -54,6 +54,8 @@ class Email
 
     public function enviarInstrucciones()
     {
+
+        debuguear($_ENV['DOMAIN_URL']);
         // Crear el objeto de Email
         $mail = new PHPMailer();
         $mail->isSMTP();
